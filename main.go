@@ -37,6 +37,8 @@ func main() {
 		today := getToday(isLunar == "y")
 		if today == day {
 			sendMessage("今天是" + name + "的生日，请别忘记祝他生日快乐～")
+		} else {
+			log.Println("无需提醒")
 		}
 	}
 }
