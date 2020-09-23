@@ -6,7 +6,9 @@ on:
             - master
     schedule:
         - cron: '0 1 * * *'
-        
+env:
+    TZ: Asia/Shanghai
+    
 jobs:
     build:
         runs-on: ubuntu-latest
