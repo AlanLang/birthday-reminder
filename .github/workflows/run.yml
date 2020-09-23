@@ -8,13 +8,11 @@ on:
         - cron: '0 1 * * *'
 env:
     TZ: Asia/Shanghai
-    
+
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: Set time zone
-              run: export TZ='Asia/Shanghai'
             - name: Checkout codes
               uses: actions/checkout@v2
             - uses: actions/setup-go@v2
