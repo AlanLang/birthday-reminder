@@ -26,6 +26,10 @@ func main() {
 		log.Println("无配置文件", err.Error())
 		return
 	}
+	log.Println("今天是：" + getToday(false) + "，农历：" + getToday(true))
+	today := getToday(false)
+	todayLunar := getToday(true)
+
 	for _, lineStr := range strings.Split(config, "\n") {
 		if strings.HasPrefix(lineStr, "#") {
 			continue
@@ -34,11 +38,8 @@ func main() {
 		name := birthday[0]
 		day := birthday[1]
 		isLunar := birthday[2]
-		today := getToday(isLunar == "y")
-		if today == day {
+		if (isLunar == "n" && today == day) || (isLunar == "y" && todayLunar == day) {
 			sendMessage("今天是" + name + "的生日，请别忘记祝他生日快乐～")
-		} else {
-			log.Println("今天是：" + getToday(false) + "，农历：" + getToday(true))
 		}
 	}
 }
