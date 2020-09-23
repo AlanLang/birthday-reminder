@@ -38,7 +38,7 @@ func main() {
 		if today == day {
 			sendMessage("今天是" + name + "的生日，请别忘记祝他生日快乐～")
 		} else {
-			log.Println("无需提醒")
+			log.Println("今天是：" + getToday(false) + "，农历：" + getToday(true))
 		}
 	}
 }
