@@ -40,6 +40,7 @@ func main() {
 		isLunar := birthday[2]
 		if (isLunar == "n" && today == day) || (isLunar == "y" && todayLunar == day) {
 			sendMessage("今天是" + name + "的生日，请别忘记祝他生日快乐～")
+			log.Println("今天是" + name + "的生日，请别忘记祝他生日快乐～")
 		}
 	}
 }
